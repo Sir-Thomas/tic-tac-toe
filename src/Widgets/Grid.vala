@@ -40,7 +40,7 @@ public class TicTacToe.Grid : Gtk.Grid {
     public void attach_buttons () {
         for ( var i = 0; i < 3; i++ ) {
             for ( var j = 0; j < 3; j++ ) {
-                attach (buttons[i,j], j, i+1);
+                attach (buttons[i,j], j, i);
             }
         }
     }
