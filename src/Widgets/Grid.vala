@@ -20,8 +20,7 @@ public class TicTacToe.Grid : Gtk.Grid {
         game_box.advance_turn ();
     }
 
-    public void reset_game () {
-        game_box.turn = 1;
+    public void new_game () {
         remove_buttons ();
         create_buttons ();
         attach_buttons ();
