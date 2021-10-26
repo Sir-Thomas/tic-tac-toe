@@ -93,6 +93,8 @@ public class TicTacToe.Grid : Gtk.Grid {
                     o = 0;
                 }
             }
+            x = 0;
+            o = 0;
         }
         return 0;
     }
@@ -120,6 +122,8 @@ public class TicTacToe.Grid : Gtk.Grid {
                     o = 0;
                 }
             }
+            x = 0;
+            o = 0;
         }
         return 0;
     }
