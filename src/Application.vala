@@ -3,8 +3,8 @@
  * SPDX-FileCopyrightText: 2021 Tommy Priest <tommy@sirthomas.xyz>
  */
 
-public class TicTacToe : Gtk.Application {
-    public TicTacToe () {
+public class TicTacToeApp : Gtk.Application {
+    public TicTacToeApp () {
         Object (
             application_id: "com.github.sirthomas.tic-tac-toe",
             flags: ApplicationFlags.FLAGS_NONE
@@ -17,12 +17,12 @@ public class TicTacToe : Gtk.Application {
             default_height = 500,
             default_width = 500
         };
-        var label = new Gtk.Label (_("tic-tac-toe"));
-        main_window.child = label;
+        var grid = new TicTacToe.Grid ();
+        main_window.child = grid;
         main_window.present ();
     }
 
     public static int main (string[] args) {
-        return new TicTacToe ().run (args);
+        return new TicTacToeApp ().run (args);
     }
 }
