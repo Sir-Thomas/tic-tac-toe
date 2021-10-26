@@ -170,4 +170,12 @@ public class TicTacToe.Grid : Gtk.Grid {
         }
         return 0;
     }
+
+    public void disable_buttons () {
+        for ( var i = 0; i < 3; i++ ) {
+            for ( var j = 0; j < 3; j++ ) {
+                buttons[i,j].sensitive = false;
+            }
+        }
+    }
 }
