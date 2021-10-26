@@ -5,6 +5,7 @@ executable(
     meson.project_name(),
     'Application.vala',
     'Widgets' / 'GameBox.vala',
+    'Widgets' / 'TitleBar.vala',
     'Widgets' / 'Grid.vala',
     'Widgets' / 'Button.vala',
     dependencies: [

@@ -1,5 +1,6 @@
 src/Application.vala
 src/Widgets/GameBox.vala
+src/Widgets/TitleBar.vala
 src/Widgets/Grid.vala
 src/Widgets/Button.vala
 data/tic-tac-toe.appdata.xml.in

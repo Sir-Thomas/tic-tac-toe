@@ -1,28 +1,31 @@
 public class TicTacToe.GameBox : Gtk.Box {
     public int turn = 1;
     public TicTacToe.Grid grid;
+    public TicTacToe.TitleBar title_bar;
 
     construct {
         orientation = Gtk.Orientation.VERTICAL;
 
-        var new_game_button = new Gtk.Button.with_label (_("New Game"));
+        title_bar = new TicTacToe.TitleBar (this);
         grid = new TicTacToe.Grid (this);
-        new_game_button.clicked.connect (new_game);
         
-        append (new_game_button);
+        append (title_bar);
         append (grid);
     }
 
     public void advance_turn () {
         if ( turn == 1 ) {
             turn = 2;
+            title_bar.active_player.label = (_("Player 2's Turn"));
         } else {
             turn = 1;
+            title_bar.active_player.label = (_("Player 1's Turn"));
         }
     }
 
     public void new_game () {
         turn = 1;
+        title_bar.active_player.label = (_("Player 1's Turn"));
         grid.new_game ();
     }
 }
