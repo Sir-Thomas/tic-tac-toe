@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the com.github.sirthomas.tic-tac-toe package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: com.github.sirthomas.tic-tac-toe\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-26 11:08-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/Application.vala:16 src/Application.vala:20
+#: data/tic-tac-toe.desktop.in:3 data/tic-tac-toe.desktop.in:4
+msgid "tic-tac-toe"
+msgstr ""
+
+#: data/tic-tac-toe.appdata.xml.in:6
+msgid "QR Scanner"
+msgstr ""
+
+#: data/tic-tac-toe.appdata.xml.in:7
+msgid "Play tic-tac-toe"
+msgstr ""
+
+#: data/tic-tac-toe.appdata.xml.in:9
+msgid "A simple tic-tac-toe game"
+msgstr ""
+
+#: data/tic-tac-toe.desktop.in:5
+msgid "Simple tic-tac-toe game"
+msgstr ""
+
+#: data/tic-tac-toe.desktop.in:10
+msgid "tic;tac;toe;tic-tac-toe;game;"
+msgstr ""

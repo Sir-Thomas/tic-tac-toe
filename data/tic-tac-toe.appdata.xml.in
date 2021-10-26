@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2021 Tommy Priest <tommy@sirthomas.xyz> -->
+<component type="desktop">
+    <id>com.github.sirthomas.tic-tac-toe</id>
+    <metadata_license>CC0</metadata_license>
+    <name>QR Scanner</name>
+    <summary>Play tic-tac-toe</summary>
+    <description>
+        <p>A simple tic-tac-toe game</p>
+    </description>
+</component>

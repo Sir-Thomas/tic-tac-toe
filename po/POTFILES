@@ -1,0 +1,3 @@
+src/Application.vala
+data/tic-tac-toe.appdata.xml.in
+data/tic-tac-toe.desktop.in

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=tic-tac-toe
+GenericName=tic-tac-toe
+Comment=Simple tic-tac-toe game
+Categories=Game;
+Exec=com.github.sirthomas.tic-tac-toe
+Icon=com.github.sirthomas.tic-tac-toe
+Terminal=false
+Type=Application
+Keywords=tic;tac;toe;tic-tac-toe;game;
