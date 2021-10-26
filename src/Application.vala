@@ -17,8 +17,8 @@ public class TicTacToeApp : Gtk.Application {
             default_height = 500,
             default_width = 500
         };
-        var grid = new TicTacToe.Grid ();
-        main_window.child = grid;
+        var box = new TicTacToe.GameBox ();
+        main_window.child = box;
         main_window.present ();
     }
 

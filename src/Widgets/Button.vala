@@ -12,7 +12,7 @@ public class TicTacToe.Button : Gtk.Button {
     }
 
     void on_click () {
-        if ( grid.turn == 1 ) {
+        if ( grid.get_turn() == 1 ) {
             label = "X";
         } else {
             label = "O";
