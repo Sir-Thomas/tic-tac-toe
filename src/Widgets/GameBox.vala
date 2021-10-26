@@ -14,6 +14,8 @@ public class TicTacToe.GameBox : Gtk.Box {
     }
 
     public void advance_turn () {
+        int winner = grid.check_for_winner ();
+        print (@"$winner");
         if ( turn == 1 ) {
             turn = 2;
             title_bar.active_player.label = (_("Player 2's Turn"));
