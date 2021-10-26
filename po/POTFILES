@@ -1,3 +1,5 @@
 src/Application.vala
+src/Widgets/Grid.vala
+src/Widgets/Button.vala
 data/tic-tac-toe.appdata.xml.in
 data/tic-tac-toe.desktop.in

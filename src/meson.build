@@ -5,6 +5,7 @@ executable(
     meson.project_name(),
     'Application.vala',
     'Widgets' / 'Grid.vala',
+    'Widgets' / 'Button.vala',
     dependencies: [
         dependency('gtk4')
     ],
