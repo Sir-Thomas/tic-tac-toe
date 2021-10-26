@@ -1,5 +1,6 @@
 public class TicTacToe.GameBox : Gtk.Box {
     public int turn = 1;
+    public int number_of_turns = 0;
     public TicTacToe.Grid grid;
     public TicTacToe.TitleBar title_bar;
 
@@ -15,7 +16,13 @@ public class TicTacToe.GameBox : Gtk.Box {
 
     public void advance_turn () {
         int winner = grid.check_for_winner ();
-        if (winner == 0) {
+        if (winner == 1) {
+            title_bar.active_player.label = (_("Player 1 Wins!"));
+            grid.disable_buttons ();
+        } else if (winner == 2) {
+            title_bar.active_player.label = (_("Player 2 Wins!"));
+            grid.disable_buttons ();
+        } else if (number_of_turns < 8) {
             if (turn == 1) {
                 turn = 2;
                 title_bar.active_player.label = (_("Player 2's Turn"));
@@ -23,17 +30,16 @@ public class TicTacToe.GameBox : Gtk.Box {
                 turn = 1;
                 title_bar.active_player.label = (_("Player 1's Turn"));
             }
-        } else if (winner == 1) {
-            title_bar.active_player.label = (_("Player 1 Wins!"));
-            grid.disable_buttons ();
-        } else if (winner == 2) {
-            title_bar.active_player.label = (_("Player 2 Wins!"));
+            number_of_turns++;
+        } else {
+            title_bar.active_player.label = (_("Cat's Game"));
             grid.disable_buttons ();
         }
     }
 
     public void new_game () {
         turn = 1;
+        number_of_turns = 0;
         title_bar.active_player.label = (_("Player 1's Turn"));
         grid.new_game ();
     }
