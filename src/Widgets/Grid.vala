@@ -1,6 +1,8 @@
 public class TicTacToe.Grid : Gtk.Grid {
     public TicTacToe.GameBox game_box;
     public TicTacToe.Button[] buttons = new TicTacToe.Button[9];
+    string X_VALUE = "<span size=\"xx-large\">X</span>";
+    string O_VALUE = "<span size=\"xx-large\">O</span>";
 
     public Grid (TicTacToe.GameBox box) {
         game_box = box;
@@ -70,13 +72,13 @@ public class TicTacToe.Grid : Gtk.Grid {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (buttons[3*i+j].label == "X") {
+                if (buttons[3*i+j].label == X_VALUE) {
                     x++;
                     o = 0;
                     if (x == 3) {
                         return 1;
                     }
-                } else if (buttons[3*i+j].label == "O") {
+                } else if (buttons[3*i+j].label == O_VALUE) {
                     o++;
                     x = 0;
                     if (o == 3) {
@@ -99,13 +101,13 @@ public class TicTacToe.Grid : Gtk.Grid {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (buttons[3*j+i].label == "X") {
+                if (buttons[3*j+i].label == X_VALUE) {
                     x++;
                     o = 0;
                     if (x == 3) {
                         return 1;
                     }
-                } else if (buttons[3*j+i].label == "O") {
+                } else if (buttons[3*j+i].label == O_VALUE) {
                     o++;
                     x = 0;
                     if (o == 3) {
@@ -127,13 +129,13 @@ public class TicTacToe.Grid : Gtk.Grid {
         int o = 0;
 
         for (int i = 0; i < 9; i += 4) {
-            if (buttons[i].label == "X") {
+            if (buttons[i].label == X_VALUE) {
                 x++;
                 o = 0;
                 if (x == 3) {
                     return 1;
                 }
-            } else if (buttons[i].label == "O") {
+            } else if (buttons[i].label == O_VALUE) {
                 o++;
                 x = 0;
                 if (o == 3) {
@@ -149,13 +151,13 @@ public class TicTacToe.Grid : Gtk.Grid {
         o = 0;
 
         for (int i = 2; i < 7; i += 2) {
-            if (buttons[i].label == "X") {
+            if (buttons[i].label == X_VALUE) {
                 x++;
                 o = 0;
                 if (x == 3) {
                     return 1;
                 }
-            } else if (buttons[i].label == "O") {
+            } else if (buttons[i].label == O_VALUE) {
                 o++;
                 x = 0;
                 if (o == 3) {

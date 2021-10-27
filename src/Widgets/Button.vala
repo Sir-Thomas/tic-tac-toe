@@ -14,10 +14,11 @@ public class TicTacToe.Button : Gtk.Button {
     }
 
     public void on_click (bool redo) {
+        Gtk.Label temp = (Gtk.Label) child;
         if ( grid.get_active_player () == 1 ) {
-            label = "X";
+            temp.set_markup ("<span size=\"xx-large\">X</span>");
         } else {
-            label = "O";
+            temp.set_markup ("<span size=\"xx-large\">O</span>");
         }
         sensitive = false;
         grid.advance_turn (id, redo);
