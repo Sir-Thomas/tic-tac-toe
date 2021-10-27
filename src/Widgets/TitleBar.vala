@@ -12,13 +12,9 @@ public class TicTacToe.TitleBar : Gtk.Box {
         homogeneous = true;
         spacing = 50;
         new_game_button = new Gtk.Button.with_label (_("New Game"));
-        new_game_button.clicked.connect (new_game);
+        new_game_button.clicked.connect (() => game_box.new_game ());
         
         append (active_player);
         append (new_game_button);
-    }
-
-    public void new_game () {
-        game_box.new_game ();
     }
 }

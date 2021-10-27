@@ -1,8 +1,10 @@
 public class TicTacToe.Button : Gtk.Button {
+    public int id;
     public TicTacToe.Grid grid;
 
-    public Button (TicTacToe.Grid g) {
+    public Button (TicTacToe.Grid g, int i) {
         grid = g;
+        id = i;
     }
 
     construct {
@@ -18,6 +20,6 @@ public class TicTacToe.Button : Gtk.Button {
             label = "O";
         }
         sensitive = false;
-        grid.advance_turn ();
+        grid.advance_turn (id);
     }
 }

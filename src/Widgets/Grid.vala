@@ -16,8 +16,8 @@ public class TicTacToe.Grid : Gtk.Grid {
         attach_buttons ();
     }
 
-    public void advance_turn () {
-        game_box.advance_turn ();
+    public void advance_turn (int id) {
+        game_box.advance_turn (id);
     }
 
     public void new_game () {
@@ -30,7 +30,7 @@ public class TicTacToe.Grid : Gtk.Grid {
         var k = 1;
         for ( var i = 0; i < 3; i++ ) {
             for ( var j = 0; j < 3; j++ ) {
-                buttons[i,j] = new TicTacToe.Button (this);
+                buttons[i,j] = new TicTacToe.Button (this, k);
                 k++;
             }
         }

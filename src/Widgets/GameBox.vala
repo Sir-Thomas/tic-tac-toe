@@ -1,6 +1,7 @@
 public class TicTacToe.GameBox : Gtk.Box {
     public int turn = 1;
     public int number_of_turns = 0;
+    public int[] turn_history = new int[9];
     public TicTacToe.Grid grid;
     public TicTacToe.TitleBar title_bar;
 
@@ -14,7 +15,8 @@ public class TicTacToe.GameBox : Gtk.Box {
         append (grid);
     }
 
-    public void advance_turn () {
+    public void advance_turn (int id) {
+        turn_history[number_of_turns] = id;
         int winner = grid.check_for_winner ();
         if (winner == 1) {
             title_bar.active_player.label = (_("Player 1 Wins!"));
@@ -38,9 +40,21 @@ public class TicTacToe.GameBox : Gtk.Box {
     }
 
     public void new_game () {
+        temp_print_turn_history ();
+        for (int i = 0; i < 9; i++) {
+            turn_history[i] = 0;
+        }
         turn = 1;
         number_of_turns = 0;
         title_bar.active_player.label = (_("Player 1's Turn"));
         grid.new_game ();
+    }
+    
+    public void temp_print_turn_history () {
+        for (int i = 0; i < 9; i++) {
+            var temp = turn_history[i];
+            print (@"$temp"+", ");
+        }
+        print ("\n");
     }
 }
