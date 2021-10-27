@@ -10,7 +10,6 @@ public class TicTacToe.TitleBar : Gtk.Box {
 
     construct {
         hexpand = true;
-        homogeneous = true;
         spacing = 6;
         var new_game_button = new Gtk.Button.with_label (_("New Game"));
         new_game_button.clicked.connect (() => game_box.new_game ());
@@ -18,6 +17,11 @@ public class TicTacToe.TitleBar : Gtk.Box {
         undo_button.clicked.connect (() => game_box.undo ());
         redo_button.sensitive = false;
         redo_button.clicked.connect (() => game_box.redo ());
+
+        active_player_label.hexpand = true;
+        undo_button.hexpand = true;
+        redo_button.hexpand = true;
+        new_game_button.hexpand = true;
         
         append (active_player_label);
         append (undo_button);
