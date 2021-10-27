@@ -1,4 +1,4 @@
-public class TicTacToe.TitleBar : Gtk.Box {
+public class TicTacToe.TitleBar : Gtk.Grid {
     public TicTacToe.GameBox game_box;
     public Gtk.Label active_player_label = new Gtk.Label (_("Player 1's Turn"));
     public Gtk.Button undo_button = new Gtk.Button.with_label (_("Undo"));
@@ -9,8 +9,7 @@ public class TicTacToe.TitleBar : Gtk.Box {
     }
 
     construct {
-        hexpand = true;
-        spacing = 6;
+        column_spacing = 6;
         var new_game_button = new Gtk.Button.with_label (_("New Game"));
         new_game_button.clicked.connect (() => game_box.new_game ());
         undo_button.sensitive = false;
@@ -22,10 +21,14 @@ public class TicTacToe.TitleBar : Gtk.Box {
         undo_button.hexpand = true;
         redo_button.hexpand = true;
         new_game_button.hexpand = true;
+        active_player_label.vexpand = true;
+        undo_button.vexpand = true;
+        redo_button.vexpand = true;
+        new_game_button.vexpand = true;
         
-        append (active_player_label);
-        append (undo_button);
-        append (redo_button);
-        append (new_game_button);
+        attach (active_player_label, 0, 0);
+        attach (undo_button, 1, 0);
+        attach (redo_button, 2, 0);
+        attach (new_game_button, 3, 0);
     }
 }

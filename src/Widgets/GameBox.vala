@@ -1,4 +1,4 @@
-public class TicTacToe.GameBox : Gtk.Box {
+public class TicTacToe.GameBox : Gtk.Grid {
     public int active_player = 1;
     public int turn = 0;
     public int[] turn_history = {-1, -1, -1, -1, -1, -1, -1, -1, -1};
@@ -6,13 +6,13 @@ public class TicTacToe.GameBox : Gtk.Box {
     public TicTacToe.TitleBar title_bar;
 
     construct {
-        orientation = Gtk.Orientation.VERTICAL;
+        row_homogeneous = true;
 
         title_bar = new TicTacToe.TitleBar (this);
         grid = new TicTacToe.Grid (this);
         
-        append (title_bar);
-        append (grid);
+        attach (title_bar, 0, 0, 1, 1);
+        attach (grid, 0, 1, 1, 9);
     }
 
     public void advance_turn (int id, bool redo) {
