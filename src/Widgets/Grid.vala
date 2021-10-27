@@ -1,6 +1,6 @@
 public class TicTacToe.Grid : Gtk.Grid {
     public TicTacToe.GameBox game_box;
-    public Gtk.Button[,] buttons = new Gtk.Button[3,3];
+    public TicTacToe.Button[] buttons = new TicTacToe.Button[9];
 
     public Grid (TicTacToe.GameBox box) {
         game_box = box;
@@ -16,8 +16,8 @@ public class TicTacToe.Grid : Gtk.Grid {
         attach_buttons ();
     }
 
-    public void advance_turn (int id) {
-        game_box.advance_turn (id);
+    public void advance_turn (int id, bool redo) {
+        game_box.advance_turn (id, redo);
     }
 
     public void new_game () {
@@ -27,33 +27,27 @@ public class TicTacToe.Grid : Gtk.Grid {
     }
 
     public void create_buttons () {
-        var k = 1;
-        for ( var i = 0; i < 3; i++ ) {
-            for ( var j = 0; j < 3; j++ ) {
-                buttons[i,j] = new TicTacToe.Button (this, k);
-                k++;
-            }
+        for ( var i = 0; i < 9; i++ ) {
+            buttons[i] = new TicTacToe.Button (this, i);
         }
     }
 
     public void attach_buttons () {
         for ( var i = 0; i < 3; i++ ) {
             for ( var j = 0; j < 3; j++ ) {
-                attach (buttons[i,j], j, i);
+                attach (buttons[3*i+j], j, i);
             }
         }
     }
 
     public void remove_buttons () {
-        for ( var i = 0; i < 3; i++ ) {
-            for ( var j = 0; j < 3; j++ ) {
-                remove (buttons[i,j]);
-            }
+        for ( var i = 0; i < 9; i++ ) {
+            remove (buttons[i]);
         }
     }
 
-    public int get_turn () {
-        return game_box.turn;
+    public int get_active_player () {
+        return game_box.active_player;
     }
 
     public int check_for_winner () {
@@ -76,13 +70,13 @@ public class TicTacToe.Grid : Gtk.Grid {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (buttons[i,j].label == "X") {
+                if (buttons[3*i+j].label == "X") {
                     x++;
                     o = 0;
                     if (x == 3) {
                         return 1;
                     }
-                } else if (buttons[i,j].label == "O") {
+                } else if (buttons[3*i+j].label == "O") {
                     o++;
                     x = 0;
                     if (o == 3) {
@@ -105,13 +99,13 @@ public class TicTacToe.Grid : Gtk.Grid {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                if (buttons[j,i].label == "X") {
+                if (buttons[3*j+i].label == "X") {
                     x++;
                     o = 0;
                     if (x == 3) {
                         return 1;
                     }
-                } else if (buttons[j,i].label == "O") {
+                } else if (buttons[3*j+i].label == "O") {
                     o++;
                     x = 0;
                     if (o == 3) {
@@ -132,14 +126,14 @@ public class TicTacToe.Grid : Gtk.Grid {
         int x = 0;
         int o = 0;
 
-        for (int i = 0; i < 3; i++) {
-            if (buttons[i,i].label == "X") {
+        for (int i = 0; i < 9; i += 4) {
+            if (buttons[i].label == "X") {
                 x++;
                 o = 0;
                 if (x == 3) {
                     return 1;
                 }
-            } else if (buttons[i,i].label == "O") {
+            } else if (buttons[i].label == "O") {
                 o++;
                 x = 0;
                 if (o == 3) {
@@ -154,14 +148,14 @@ public class TicTacToe.Grid : Gtk.Grid {
         x = 0;
         o = 0;
 
-        for (int i = 0; i < 3; i++) {
-            if (buttons[2-i,i].label == "X") {
+        for (int i = 2; i < 7; i += 2) {
+            if (buttons[i].label == "X") {
                 x++;
                 o = 0;
                 if (x == 3) {
                     return 1;
                 }
-            } else if (buttons[2-i,i].label == "O") {
+            } else if (buttons[i].label == "O") {
                 o++;
                 x = 0;
                 if (o == 3) {
@@ -176,10 +170,13 @@ public class TicTacToe.Grid : Gtk.Grid {
     }
 
     public void disable_buttons () {
-        for ( var i = 0; i < 3; i++ ) {
-            for ( var j = 0; j < 3; j++ ) {
-                buttons[i,j].sensitive = false;
-            }
+        for ( var i = 0; i < 9; i++ ) {
+            buttons[i].sensitive = false;
         }
+    }
+
+    public void reset_button (int id) {
+        buttons[id].label = "";
+        buttons[id].sensitive = true;
     }
 }
