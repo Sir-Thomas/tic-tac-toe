@@ -14,8 +14,8 @@ public class TicTacToeApp : Gtk.Application {
     protected override void activate () {
         var main_window = new Gtk.ApplicationWindow (this) {
             title = _("tic-tac-toe"),
-            default_height = 500,
-            default_width = 500
+            default_height = 812,
+            default_width = 375
         };
         var box = new TicTacToe.GameBox ();
         main_window.child = box;

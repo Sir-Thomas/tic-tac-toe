@@ -28,9 +28,9 @@ public class TicTacToe.TitleBar : Gtk.Grid {
         redo_button.vexpand = true;
         new_game_button.vexpand = true;
         
-        attach (active_player_label, 0, 0, 2, 1);
-        attach (undo_button, 2, 0);
-        attach (redo_button, 3, 0);
-        attach (new_game_button, 4, 0, 2, 1);
+        attach (active_player_label, 0, 0, 3, 1);
+        attach (undo_button, 3, 0, 2, 1);
+        attach (redo_button, 5, 0, 2, 1);
+        attach (new_game_button, 7, 0, 3, 1);
     }
 }
