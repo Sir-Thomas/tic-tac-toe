@@ -9,7 +9,9 @@ public class TicTacToe.TitleBar : Gtk.Grid {
     }
 
     construct {
+        margin_bottom = 6;
         column_spacing = 6;
+        column_homogeneous = true;
         var new_game_button = new Gtk.Button.with_label (_("New Game"));
         new_game_button.clicked.connect (() => game_box.new_game ());
         undo_button.sensitive = false;
@@ -26,9 +28,9 @@ public class TicTacToe.TitleBar : Gtk.Grid {
         redo_button.vexpand = true;
         new_game_button.vexpand = true;
         
-        attach (active_player_label, 0, 0);
-        attach (undo_button, 1, 0);
-        attach (redo_button, 2, 0);
-        attach (new_game_button, 3, 0);
+        attach (active_player_label, 0, 0, 2, 1);
+        attach (undo_button, 2, 0);
+        attach (redo_button, 3, 0);
+        attach (new_game_button, 4, 0, 2, 1);
     }
 }

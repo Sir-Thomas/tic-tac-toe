@@ -6,6 +6,10 @@ public class TicTacToe.GameBox : Gtk.Grid {
     public TicTacToe.TitleBar title_bar;
 
     construct {
+        margin_start = 12;
+        margin_end = 12;
+        margin_top = 12;
+        margin_bottom = 12;
         row_homogeneous = true;
 
         title_bar = new TicTacToe.TitleBar (this);

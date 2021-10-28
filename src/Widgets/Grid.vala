@@ -13,6 +13,8 @@ public class TicTacToe.Grid : Gtk.Grid {
         hexpand = true;
         column_homogeneous = true;
         row_homogeneous = true;
+        column_spacing = 6;
+        row_spacing = 6;
 
         create_buttons ();
         attach_buttons ();
