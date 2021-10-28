@@ -11,13 +11,12 @@ public class TicTacToeApp : Gtk.Application {
         );
     }
 
-    var main_window = new Gtk.ApplicationWindow (this) {
+    protected override void activate () {
+        var main_window = new Gtk.ApplicationWindow (this) {
             title = _("tic-tac-toe"),
             default_height = 500,
             default_width = 500
         };
-        
-        main_window.decorated = false;
         var box = new TicTacToe.GameBox ();
         main_window.child = box;
         main_window.present ();
